@@ -96,10 +96,10 @@ fn generate_bindings() {
     };
 
     let bindings = bindgen::Builder::default()
-        // Make sure to only whitelist miniaudio's API.
-        .whitelist_type("ma_.*")
-        .whitelist_function("ma_.*")
-        .whitelist_var("(ma|MA)_.*")
+        // Make sure to only allowlist miniaudio's API.
+        .allowlist_type("ma_.*")
+        .allowlist_function("ma_.*")
+        .allowlist_var("(ma|MA)_.*")
         // We just use one big generated header created by concatenating what we need.
         .header(header)
         .size_t_is_usize(true)
